@@ -1,7 +1,5 @@
 ## Práctica 1. Configuración de máquina virtual en el IaaS
-
-Holi
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Andrea Hernández Martín - alu0101119137
 
 ### Markdown
 
