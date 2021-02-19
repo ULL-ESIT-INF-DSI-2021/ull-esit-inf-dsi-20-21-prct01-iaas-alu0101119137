@@ -10,8 +10,12 @@ En primer lugar, debemos configurar el servicio VPN de la ULL para poder acceder
     
 Una vez conectados a la VPN, tenemos que acceder a nuestro Servicio Iaas de la ULL mediante nuestas credenciales, una vez dentro del Servicio tenemos que encender la máquina virtual de la asignatura llamada DSI, a la que se le asignará un número una vez encendida (en mi caso, DSI-35).  
   
-A continuación, dentro de nuestra máquina, en el apartado de *interfaces de red*, obtenemos nuestra dirección IP para poder conectarnos a nuestra máquina mediante SSH. Para ello, abrimos una terminal y escribimos lo siguiente, donde el nombre de usuario de la máquina virtual es 'usuario' y la contraseña es 'usuario'. Una vez hecho esto, nos pedirá que cambiemos la contraseña de la máquina virtual, en primer lugar pide la contraseña actual 'usuario' y a continuación, repetir dos veces la nueva contraseña.  
-```shh usuario@10.6.129.216 ```
+A continuación, dentro de nuestra máquina, en el apartado de *interfaces de red*, obtenemos nuestra dirección IP para poder conectarnos a nuestra máquina mediante SSH. Para ello, abrimos una terminal y escribimos lo siguiente,donde el nombre de usuario de la máquina virtual es 'usuario' y la contraseña es 'usuario'.  
+```shh usuario@10.6.129.216 ```  
+Una vez hecho esto, nos pedirá que cambiemos la contraseña de la máquina virtual, en primer lugar pide la contraseña actual 'usuario' y a continuación, repetir dos veces la nueva contraseña.  
+  
+En segundo lugar, vamos a cambiar el nombre del host de la maquina virtual, para ello modificamos el fichero hostname de la siguiente forma:
+```sudo vim /etc/hostname```
 
 
 
