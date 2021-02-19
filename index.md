@@ -1,9 +1,7 @@
 ## Práctica 1. Configuración de máquina virtual en el IaaS
 ### Andrea Hernández Martín - alu0101119137
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+En esta práctica llevaremos a cabo la configuración de la máquina virtual que tienen disponible a través del servicio IaaS de la ULL, además de la instalación y configuración de todas las herramientas necesarias para comenzar a trabajar en la asignatura.
 
 ```markdown
 Syntax highlighted code block
