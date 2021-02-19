@@ -1,7 +1,8 @@
-## Práctica 1. Configuración de máquina virtual en el IaaS
+# Práctica 1. Configuración de máquina virtual en el IaaS
 ### Andrea Hernández Martín - alu0101119137
 
-En esta práctica llevaremos a cabo la configuración de la máquina virtual que tienen disponible a través del servicio IaaS de la ULL, además de la instalación y configuración de todas las herramientas necesarias para comenzar a trabajar en la asignatura.
+## Introducción
+En esta práctica llevaremos a cabo la configuración de la máquina virtual que tenemos disponible a través del servicio IaaS de la ULL, además de la instalación y configuración de todas las herramientas necesarias para comenzar a trabajar en la asignatura.
 
 ```markdown
 Syntax highlighted code block
