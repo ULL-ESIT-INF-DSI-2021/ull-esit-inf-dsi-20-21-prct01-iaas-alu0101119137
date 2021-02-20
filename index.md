@@ -17,16 +17,29 @@ A continuación, dentro de nuestra máquina, en el apartado de *interfaces de re
 
 Una vez hecho esto, nos pedirá que cambiemos la contraseña de la máquina virtual, en primer lugar pide introducir la contraseña actual 'usuario' y a continuación, repetir dos veces la nueva contraseña que decidamos establecer. Al cambiar la contraseña, cierra la sesión de la máquina virtual, por lo que tendremos que volver a conectarnos a ella con la nueva contraseña establecida.
 
-**3. Cambiar el nombre del host de la máquina virtual**  
-Para cambiar el nombre del host tenemos que modificar el fichero /etc/hostname, en el que el nombre actual del host es ubuntu, y poner el nombre que se quiera, en mi caso iaas-dsi35, de la siguiente forma:
+**3. Modificación del nombre del host de la máquina virtual.**  
+Para cambiar el nombre del host tenemos que modificar el fichero */etc/hostname*, en el que el nombre actual del host es ubuntu, y poner el nombre que se quiera, en mi caso iaas-dsi35, de la siguiente forma:
 ```
   usuario@ubuntu:~$ cat /etc/hostname
   ubuntu
   usuario@ubuntu:~$ sudo vim /etc/hostname
   usuario@ubuntu:~$ cat /etc/hostname
-  iaas-dsi
+  iaas-dsi35
+```  
+Además de modificar el fichero /etc/hostname tenemos que modificar también el fichero */etc/hosts*, en el que cambiaremos también el nombre del host al establecido anteriormente (iaas-dsi35):  
 ```
+usuario@ubuntu:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	ubuntu
+...
 
+usuario@ubuntu:~$ sudo vi /etc/hosts
+
+usuario@ubuntu:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	iaas-dsi35
+...
+```
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 ## Conclusiones
 ## Bibliografía
