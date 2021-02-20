@@ -144,12 +144,20 @@ PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git 
 usuario@iaas-dsi2:~$ exec bash -l
 [~()]$
 ```  
-Como podemos observar el prompt ha cambiado de 'usuario@iaas-dsi35':~$ a '[~()]$'.  
+Como podemos observar en la última línea anterior, el prompt ha cambiado.
 No obstante para comprobar realmente que el prompt muestra lo que deseamos, tendremos que añadir la clave pública de la máquina virtual en la configuración de las claves de nuestra cuenta de GitHub, así nos sera más facil trabajar con repositorios remotos y así también poder clonar el repositorio para hacer la prueba. Esto se realizará en el siguiente apartado.
 
-**3. **
-
-
+**3. Configuración de las claves de nuestra cuenta de GitHub.**
+En primer lugar, tenemos que copiar la clave pública-privada de la máquina virtual, mediante el comando siguiente podemos ver la clave para copiarla.
+``` 
+[~()]$ cat .ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKrOe8u+BaaAUqDjfiqvoehIcl4nd2xSXxnBT7OaBwpZXisgdBn6CLZnfPYDGNhTbxBnbaWj+ljLPr6Znzw7hguH6f8ci36x5+Z+5h869ujaABAlr6MdpMxy6NMYxOJ22Dt9OBucremwLGYHAsMd+wju0DxEUUJcRM3JxuAjIfd0s4W44oCuzZQxsunx6K4PMLF4huTa2zIlKespXpj+Ho1jwDgtshHg/grdY+FtKTMA5GHtjtR8Ig17qVwGonoe7EjAh5duDAKQuD5TpyhIg7pnXGj69our4cftMElWNwyY9sLktM9HXKO8OJSj/mHDOBu+519zvB1CJ7NS9TW+CR usuario@iaas-dsi35
+```  
+Una vez copiada la clave, accedemos a la configuración de nuesta cuenta de Github *(Account settings)*, una vez ahí, vamos a la sección de *SSH and GPG keys* y pulsamos en *New SSH key*. Nos pide un 'Title' para la SSH key (en mi caso puse usuario@iaas-dsi35) y en el campo 'Key' pegamos la clave de nuestra máquina virtual, pulsamos sobre Add SSH key y ya tendríamos la clave en nuestra cuenta de Github.  
+Para comprobar que funciona, clonamos un repositorio desde la terminal mediante el siguiente comando:
+```
+```  
+**4. Instalación de Node Version Manager (nvm).**
 
 ## Conclusiones
 ## Bibliografía
