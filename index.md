@@ -13,8 +13,9 @@ Una vez conectados a la VPN, tenemos que acceder a nuestro [Servicio Iaas de la 
   
 **2. Obtención de la dirección IP de la máquina y acceso mediante SSH.**  
 A continuación, dentro de nuestra máquina, en el apartado de *interfaces de red*, obtenemos nuestra dirección IP (de la forma 10.6.XXX.XXX) para poder conectarnos a nuestra máquina mediante SSH. Para ello, abrimos una terminal en nuestra máquina local y escribimos el nombre de usuario de la máquina virtual que es 'usuario' y la dirección IP de nuestra máquina virtual. A continuación, pedirá la contraseña que es 'usuario'.  
-```shh usuario@10.6.129.216 ```  
-
+```
+shh usuario@10.6.129.216 
+```  
 Una vez hecho esto, nos pedirá que cambiemos la contraseña de la máquina virtual, en primer lugar pide introducir la contraseña actual 'usuario' y a continuación, repetir dos veces la nueva contraseña que decidamos establecer. Al cambiar la contraseña, cierra la sesión de la máquina virtual, por lo que tendremos que volver a conectarnos a ella con la nueva contraseña establecida.
 
 **3. Modificación del nombre del host de la máquina virtual.**  
