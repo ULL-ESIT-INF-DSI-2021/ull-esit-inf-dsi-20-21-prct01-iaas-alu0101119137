@@ -122,8 +122,34 @@ Generating public/private rsa key pair.
 ...
 andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKrOe8u+BaaAUqDjfiqvoehIcl4nd2xSXxnBT7OaBwpZXisgdBn6CLZnfPYDGNhTbxBnbaWj+ljLPr6Znzw7hguH6f8ci36x5+Z+5h869ujaABAlr6MdpMxy6NMYxOJ22Dt9OBucremwLGYHAsMd+wju0DxEUUJcRM3JxuAjIfd0s4W44oCuzZQxsunx6K4PMLF4huTa2zIlKespXpj+Ho1jwDgtshHg/grdY+FtKTMA5GHtjtR8Ig17qVwGonoe7EjAh5duDAKQuD5TpyhIg7pnXGj69our4cftMElWNwyY9sLktM9HXKO8OJSj/mHDOBu+519zvB1CJ7NS9TW+CR usuario@iaas-dsi35
+```  
+## Instalación de git y Node.js en la máquina virtual del IaaS  
+**1. Instalación y configuración de Git en la máquina virtual**
+Ejecutamos el siguiente comando para instalar Git:
 ```
+```
+Y a continuación, ejecutamos los siguientes comandos para su configuración:
+```
+```  
+**2. Configuración del prompt de la terminal de la máquina virtual**  
+Configuraremos el prompt de la terminal para que aparezca la rama actual en la que nos encontramos cuando accedemos a algún directorio que resulta estar asociado a un repositorio git. Para ello, descargamos el script [git prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) o copiamos su contenido en un fichero que crearemos en nuestra máquina virtual llamado *git-prompt.sh*. Los pasos a realizar son descargarnos el script y,a continuación, modificar el fichero *~/.bashrc*, incluyendo al final del mismo las dos líneas que aparecen en el código siguiente. El último comando nos permite reiniciar la terminal. 
+```
+usuario@iaas-dsi35:~$ mv git-prompt.sh .git-prompt.sh
+usuario@iaas-dsi35:~$ vim .bashrc
+usuario@iaas-dsi35:~$ tail .bashrc
+...
+source ~/.git-prompt.sh
+PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
 
-## Instalación de git y Node.js en la máquina virtual del IaaS
+usuario@iaas-dsi2:~$ exec bash -l
+[~()]$
+```  
+Como podemos observar el prompt ha cambiado de 'usuario@iaas-dsi35':~$ a '[~()]$'.  
+No obstante para comprobar realmente que el prompt muestra lo que deseamos, tendremos que añadir la clave pública de la máquina virtual en la configuración de las claves de nuestra cuenta de GitHub, así nos sera más facil trabajar con repositorios remotos y así también poder clonar el repositorio para hacer la prueba. Esto se realizará en el siguiente apartado.
+
+**3. **
+
+
+
 ## Conclusiones
 ## Bibliografía
