@@ -90,7 +90,17 @@ Con el siguiente comando copiaremos la clave generada de la máquina local en la
 andrea@andrea-laptop:~$ ssh-copy-id usuario@iaas-dsi35
 ```  
 Ahora probamos a iniciar sesión con 'usuario@iaas-dsi35' y efectivamente, comprobamos que podemos conectarnos sin tener que introducir la dirección IP ni la contraseña.  
-``` ```
+```
+andrea@andrea-laptop:~$ ssh usuario@iaas-dsi35
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-135-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Feb 20 20:23:56 WET 2021
+  ...
+```
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 ## Conclusiones
 ## Bibliografía
