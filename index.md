@@ -100,7 +100,30 @@ Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-135-generic x86_64)
 
   System information as of Sat Feb 20 20:23:56 WET 2021
   ...
+```  
+**8. Edición del fichero de configuración SSH de la máquina local.**  
+Para no tener que introducir el usuario a la hora de conectarnos mediante SSH, editamos el fichero *~/.ssh/config*:
 ```
+andrea@andrea-laptop:~$ vim ~/.ssh/config 
+andrea@andrea-laptop:~$ cat ~/.ssh/config 
+Host iaas-dsi35
+HostName iaas-dsi35
+User usuario
+```  
+Con lo anterior conseguimos iniciar sesión a la máquina virtual de la siguiente forma:  
+```
+andrea@andrea-laptop:~$ ssh iaas-dsi35
+```  
+**9. Generación de la clave pública-privada en la máquina virtual.**
+Ahora tenemos que generar la clave pública-privada como hicimos en el paso anterior 6, pero en este caso lo hacemos en la máquina virtual.  
+```
+andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
+Generating public/private rsa key pair.
+...
+andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
+
+```
+
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 ## Conclusiones
 ## Bibliografía
