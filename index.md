@@ -84,8 +84,13 @@ En caso de no tenerla generada, lo anterior indica que el fichero no existe, por
 ```
 andrea@andrea-laptop:~$ ssh-keygen
 ```  
-
-
+**7. Copia de la clave pública-privada de la máquina local en la máquina virtual e inicio de sesión.**  
+Con el siguiente comando copiaremos la clave generada de la máquina local en la máquina virtual, con esto conseguiremos conectarnos mediante SSH a la máquina virtual sin tener que recordar la dirección IP y sin tener que introducir la contraseña, solo nos haría falta el nombre de usuario y el nombre de la máquina virtual. Cuando ejecutamos ese comando nos sale un mensaje de si estamos seguros de que queremos conectarnos, tenemos que introducir 'yes' y a continuación, pide introducir la contraseña de nuestra máquina virtual. Una vez hecho esto, nos dice que se ha añadido la clave. 
+```
+andrea@andrea-laptop:~$ ssh-copy-id usuario@iaas-dsi35
+```  
+Ahora probamos a iniciar sesión con 'usuario@iaas-dsi35' y efectivamente, comprobamos que podemos conectarnos sin tener que introducir la dirección IP ni la contraseña.  
+``` ```
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 ## Conclusiones
 ## Bibliografía
