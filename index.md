@@ -75,9 +75,15 @@ andrea@andrea-laptop:~$ cat /etc/hosts
 **6. Configuración de la clave pública-privada en la máquina local.**  
 En primer lugar, comprobamos si ya tenemos generada la clave pública-privada de esta forma:  
 ```
-andrea@andrea-laptop@lluvia:~$ cat .ssh/id_rsa.pub
-
+andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFkn0P3gkkmuwS4T4yGoeScoNWEv9hSH0tRszmWSEfxKszhkgRFAtM91RAMI1AigvOb8IRbcq7jXWDONlJs+Bvuq8Q9btGpHFyG3H2Y2dXeZ+Bvker6KvfHuRqJLlde57YYghcs2juj23oFQ3RU++B7IF31DvazDvvLHcG9oVf9ajdTxqM69WYhy8GaaIBVy4ywL84sCV2iWEIgP2qqN2p2Uxg4GXZo5ODO4uKJCG11551MHwA81RTluiX+W+wEPG5mDx3dkbD5rWjWYiAAWIqybFB0iondnAcuH1pOpD3S9qiAe3CbibpzcWwVEqw0CWntFfBrJ6CB4WLLqG9DBSQsCRKfNEUAHZujrpZGlbrevNwvZ/vsD2jGIkQpEUXqJn4crViuj7MotYUpcQ3eltPhpsSTco6H80t2O2iudoefDl0VmIVb9sGjsd0YjyRxrX3xyieypNgPPu29n5pIyFRRNWOVD1ycr0T+9ZlMCzWWnfy8x/CxLzeeEVUchAve9c= andrea@andrea-laptop
 ```
+Como podemos comprobar con lo anterior, observamos que ya había generado previamente mi clave pública-privada.  
+En caso de no tenerla generada, lo anterior indica que el fichero no existe, por lo que tenemos que crearla. Por lo general, se toman los valores por defecto del script, para ello pulsamos *enter* cada vez que nos pida introducir algún dato. Es importante no introducir ningún *passphrase*. La clave se crea con lo siguiente:
+```
+andrea@andrea-laptop:~$ ssh-keygen
+```  
+
 
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 ## Conclusiones
