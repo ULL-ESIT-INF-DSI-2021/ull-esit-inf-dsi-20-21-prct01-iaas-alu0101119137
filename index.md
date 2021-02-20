@@ -117,19 +117,30 @@ andrea@andrea-laptop:~$ ssh iaas-dsi35
 **9. Generación de la clave pública-privada en la máquina virtual.**
 Ahora tenemos que generar la clave pública-privada como hicimos en el paso anterior 6, pero en este caso lo hacemos en la máquina virtual.  
 ```
-andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
+usuario@iaas-dsi35:~$ cat .ssh/id_rsa.pub
 Generating public/private rsa key pair.
 ...
-andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
+usuario@iaas-dsi35:~$ cat .ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKrOe8u+BaaAUqDjfiqvoehIcl4nd2xSXxnBT7OaBwpZXisgdBn6CLZnfPYDGNhTbxBnbaWj+ljLPr6Znzw7hguH6f8ci36x5+Z+5h869ujaABAlr6MdpMxy6NMYxOJ22Dt9OBucremwLGYHAsMd+wju0DxEUUJcRM3JxuAjIfd0s4W44oCuzZQxsunx6K4PMLF4huTa2zIlKespXpj+Ho1jwDgtshHg/grdY+FtKTMA5GHtjtR8Ig17qVwGonoe7EjAh5duDAKQuD5TpyhIg7pnXGj69our4cftMElWNwyY9sLktM9HXKO8OJSj/mHDOBu+519zvB1CJ7NS9TW+CR usuario@iaas-dsi35
 ```  
 ## Instalación de git y Node.js en la máquina virtual del IaaS  
-**1. Instalación y configuración de Git en la máquina virtual**
+**1. Instalación y configuración de Git en la máquina virtual**  
 Ejecutamos el siguiente comando para instalar Git:
 ```
+usuario@iaas-dsi35:~$ sudo apt install git
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias       
+Leyendo la información de estado... Hecho
+git ya está en su versión más reciente (1:2.17.1-1ubuntu0.7).
+0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 0 no actualizados.
 ```
 Y a continuación, ejecutamos los siguientes comandos para su configuración:
 ```
+usuario@iaas-dsi35:~$ git config --global user.name "Andrea Hernandez"
+usuario@iaas-dsi35:~$ git config --global user.email alu0101119137@ull.edu.es
+usuario@iaas-dsi35:~$ git config --list
+user.name=Andrea Hernandez
+user.email=alu0101119137@ull.edu.es
 ```  
 **2. Configuración del prompt de la terminal de la máquina virtual**  
 Configuraremos el prompt de la terminal para que aparezca la rama actual en la que nos encontramos cuando accedemos a algún directorio que resulta estar asociado a un repositorio git. Para ello, descargamos el script [git prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) o copiamos su contenido en un fichero que crearemos en nuestra máquina virtual llamado *git-prompt.sh*. Los pasos a realizar son descargarnos el script y,a continuación, modificar el fichero *~/.bashrc*, incluyendo al final del mismo las dos líneas que aparecen en el código siguiente. El último comando nos permite reiniciar la terminal. 
@@ -141,7 +152,7 @@ usuario@iaas-dsi35:~$ tail .bashrc
 source ~/.git-prompt.sh
 PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
 
-usuario@iaas-dsi2:~$ exec bash -l
+usuario@iaas-dsi35:~$ exec bash -l
 [~()]$
 ```  
 Como podemos observar en la última línea anterior, el prompt ha cambiado.
@@ -156,21 +167,75 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKrOe8u+BaaAUqDjfiqvoehIcl4nd2xSXxnBT7OaBw
 Una vez copiada la clave, accedemos a la configuración de nuesta cuenta de Github *(Account settings)*, una vez ahí, vamos a la sección de *SSH and GPG keys* y pulsamos en *New SSH key*. Nos pide un 'Title' para la SSH key (en mi caso puse usuario@iaas-dsi35) y en el campo 'Key' pegamos la clave de nuestra máquina virtual, pulsamos sobre Add SSH key y ya tendríamos la clave en nuestra cuenta de Github.  
 Para comprobar que funciona, clonamos un repositorio desde la terminal mediante el siguiente comando:
 ```
+[~()]$git clone git@github.com:ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-alu0101119137
+Clonando en 'ull-esit-inf-dsi-20-21-prct01-iaas-alu0101119137'...
+remote: Enumerating objects: 106, done.
+remote: Counting objects: 100% (106/106), done.
+remote: Compressing objects: 100% (96/96), done.
+remote: Total 106 (delta 25), reused 0 (delta 0), pack-reused 0
+Recibiendo objetos: 100% (106/106), 28.93 KiB | 352.00 KiB/s, listo.
+Resolviendo deltas: 100% (25/25), listo.
+
+[~()]$ls
+ull-esit-inf-dsi-20-21-prct01-iaas-alu0101119137
+
+[~()]$cd ull-esit-inf-dsi-20-21-prct01-iaas-alu0101119137/
+[~/ull-esit-inf-dsi-20-21-prct01-iaas-alu0101119137(main)]$
 ```  
+Como podemos observar, se ha clonado un directorio sin tener que introducir ningún credencial y además, el prompt del sistema indica la rama actual de trabajo.  
 **4. Instalación de Node Version Manager (nvm).**  
 Ahora vamos  a instalar Node Version Manager (nvm), el gestor de versiones de Node.js que es un entorno que permite la ejecución de código desarrollado en JavaScript y variantes.
 ```
+[~()]$wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+[~()]$exec bash -l
+[~()]$nvm --version
+0.37.2
 ```
 Para instalar la versión más reciente tenemos que hacer lo siguiente:
 ```
+[~()]$nvm install node
+...
+Now using node v15.9.0 (npm v7.5.3)
+[~()]$node --version
+v15.9.0
+[~()]$npm --version
+7.5.3
 ```
 **5. Instalación concreta de Node Version Manager.**  
 Si queremos utilizar versión diferente de la que tenemos instalada, podemos instalar la otra de la siguiente forma:
 ```
+[~()]$nvm install 12.0.0
+...
+Now using node v12.0.0 (npm v6.9.0)
+[~()]$node --version
+v12.0.0
+[~()]$npm --version
+6.9.0
 ```
 Y para cambiar de versiones, utilizamos estos comandos:
 ```
-```  
+[~()]$nvm list
+->      v12.0.0
+        v15.9.0
+default -> node (-> v15.9.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v15.9.0) (default)
+stable -> 15.9 (-> v15.9.0) (default)
+lts/* -> lts/fermium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.23.3 (-> N/A)
+lts/erbium -> v12.20.2 (-> N/A)
+lts/fermium -> v14.15.5 (-> N/A)
 
+[~()]$nvm use v15.9.0
+Now using node v15.9.0 (npm v7.5.3)
+[~()]$node --version
+v15.9.0
+[~()]$npm --version
+7.5.3
+```  
 ## Conclusiones
 ## Bibliografía
