@@ -121,7 +121,7 @@ andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
 Generating public/private rsa key pair.
 ...
 andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
-
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKrOe8u+BaaAUqDjfiqvoehIcl4nd2xSXxnBT7OaBwpZXisgdBn6CLZnfPYDGNhTbxBnbaWj+ljLPr6Znzw7hguH6f8ci36x5+Z+5h869ujaABAlr6MdpMxy6NMYxOJ22Dt9OBucremwLGYHAsMd+wju0DxEUUJcRM3JxuAjIfd0s4W44oCuzZQxsunx6K4PMLF4huTa2zIlKespXpj+Ho1jwDgtshHg/grdY+FtKTMA5GHtjtR8Ig17qVwGonoe7EjAh5duDAKQuD5TpyhIg7pnXGj69our4cftMElWNwyY9sLktM9HXKO8OJSj/mHDOBu+519zvB1CJ7NS9TW+CR usuario@iaas-dsi35
 ```
 
 ## Instalación de git y Node.js en la máquina virtual del IaaS
