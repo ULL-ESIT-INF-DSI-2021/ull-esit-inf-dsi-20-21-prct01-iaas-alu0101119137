@@ -9,7 +9,7 @@ En esta práctica llevaremos a cabo la configuración de la máquina virtual que
 **1. Configuración del servicio VPN de la ULL y acceso al servicio IaaS.**  
 En primer lugar, debemos configurar el servicio [VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/) para poder acceder al Iaas en caso de que estemos intentando utilizar el servicio fuera de la red universitaria.  
     
-Una vez conectados a la VPN, tenemos que acceder a nuestro Servicio Iaas de la ULL mediante nuestas credenciales. A continuación, dentro del Servicio tenemos que encender la máquina virtual de la asignatura llamada DSI, a la que se le asignará un número una vez encendida (en mi caso, DSI-35).  
+Una vez conectados a la VPN, tenemos que acceder a nuestro [Servicio Iaas de la ULL](https://www.iaas.ull.es) mediante nuestas credenciales. A continuación, dentro del Servicio tenemos que encender la máquina virtual de la asignatura llamada DSI, a la que se le asignará un número una vez encendida (en mi caso, DSI-35).  
   
 **2. Obtención de la dirección IP de la máquina y acceso mediante SSH.**  
 A continuación, dentro de nuestra máquina, en el apartado de *interfaces de red*, obtenemos nuestra dirección IP (de la forma 10.6.XXX.XXX) para poder conectarnos a nuestra máquina mediante SSH. Para ello, abrimos una terminal en nuestra máquina local y escribimos el nombre de usuario de la máquina virtual que es 'usuario' y la dirección IP de nuestra máquina virtual. A continuación, pedirá la contraseña que es 'usuario'.  
@@ -55,8 +55,29 @@ usuario@ubuntu:~$ sudo reboot
 Connection to 10.6.XXX.XXX closed by remote host.
 Connection to 10.6.XXX.XXX closed.
 ```  
-**6. Edición fichero hosts en la máquina local.** 
+**5. Edición fichero hosts en la máquina local.** 
+A continuación, editamos el fichero de hosts de la máquina local añadiendo la información de conexión a la máquina virtual, es decir, la dirección IP de la máquina virtual y su nombre:  
+```
+andrea@andrea-laptop:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	andrea-laptop
+...
 
+andrea@andrea-laptop:~$ sudo vim /etc/hosts
+
+andrea@andrea-laptop:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	andrea-laptop
+
+10.6.XXX.XXX	iaas-dsi35
+...
+```  
+**6. Configuración de la clave pública-privada en la máquina local.**  
+En primer lugar, comprobamos si ya tenemos generada la clave pública-privada de esta forma:  
+```
+andrea@andrea-laptop@lluvia:~$ cat .ssh/id_rsa.pub
+
+```
 
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 ## Conclusiones
