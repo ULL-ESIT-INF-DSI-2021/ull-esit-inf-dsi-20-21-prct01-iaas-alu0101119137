@@ -147,7 +147,7 @@ usuario@iaas-dsi2:~$ exec bash -l
 Como podemos observar en la última línea anterior, el prompt ha cambiado.
 No obstante para comprobar realmente que el prompt muestra lo que deseamos, tendremos que añadir la clave pública de la máquina virtual en la configuración de las claves de nuestra cuenta de GitHub, así nos sera más facil trabajar con repositorios remotos y así también poder clonar el repositorio para hacer la prueba. Esto se realizará en el siguiente apartado.
 
-**3. Configuración de las claves de nuestra cuenta de GitHub.**
+**3. Configuración de las claves de nuestra cuenta de GitHub.**  
 En primer lugar, tenemos que copiar la clave pública-privada de la máquina virtual, mediante el comando siguiente podemos ver la clave para copiarla.
 ``` 
 [~()]$ cat .ssh/id_rsa.pub
@@ -157,7 +157,20 @@ Una vez copiada la clave, accedemos a la configuración de nuesta cuenta de Gith
 Para comprobar que funciona, clonamos un repositorio desde la terminal mediante el siguiente comando:
 ```
 ```  
-**4. Instalación de Node Version Manager (nvm).**
+**4. Instalación de Node Version Manager (nvm).**  
+Ahora vamos  a instalar Node Version Manager (nvm), el gestor de versiones de Node.js que es un entorno que permite la ejecución de código desarrollado en JavaScript y variantes.
+```
+```
+Para instalar la versión más reciente tenemos que hacer lo siguiente:
+```
+```
+**5. Instalación concreta de Node Version Manager.**  
+Si queremos utilizar versión diferente de la que tenemos instalada, podemos instalar la otra de la siguiente forma:
+```
+```
+Y para cambiar de versiones, utilizamos estos comandos:
+```
+```  
 
 ## Conclusiones
 ## Bibliografía
