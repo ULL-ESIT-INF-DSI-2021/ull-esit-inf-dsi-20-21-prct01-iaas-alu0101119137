@@ -242,14 +242,14 @@ v15.9.0
 La realización de esta práctica me ha resultado bastente interesante, sobre todo la parte de configuración de Git ya que no tengo ninguna experencia en ese ambiente y me ha parecido bastante útil el poder clonar los repositorios en mi máquina sin tener que utilizar ningún tipo de credencial. Además, me parece que Git es una herramienta que debemos aprender a utilizar debido a que nos puede facilitar bastante el control de versiones de nuestros proyectos. Por un lado, con la parte de configuración del IaaS no tuve ninguna dificultad, ya que en otra ocasión tuve que hacerlo por lo que fue un repaso. Por el otro lado, nunca había utilizado Github Pages ni markdown para hacer informes y después de leer información sobre ellos, me parecieron basatante sencillos de usar. Por lo que puedo concluir que en general, no tuve ningún problema a la hora de realizar la práctica.  
 ## Bibliografía  
 
-- Servicio de VPN de la ULL | https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/ |
-- Configurar Git por primera vez | https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez |
-- Libro Pro Git de Scott Chacon y Ben Straub | https://git-scm.com/book/es/v2 |
-- Información Github Pages | https://docs.github.com/es/github/working-with-github-pages/about-github-pages |
-- Web Jekyll | https://jekyllrb.com/ |
-- Información Node.js | https://nodejs.org/es/about/ |
-- Node Version Manager | https://github.com/nvm-sh/nvm |
-- Node Package Manager | https://www.npmjs.com/ |
-- Introducción a Markdown | https://guides.github.com/features/mastering-markdown/ |
-- Sintaxis Markdown | https://markdown.es/sintaxis-markdown/ |
+- Servicio de VPN de la ULL | https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/ 
+- Configurar Git por primera vez | https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez 
+- Libro Pro Git de Scott Chacon y Ben Straub | https://git-scm.com/book/es/v2 
+- Información Github Pages | https://docs.github.com/es/github/working-with-github-pages/about-github-pages 
+- Web Jekyll | https://jekyllrb.com/ 
+- Información Node.js | https://nodejs.org/es/about/ 
+- Node Version Manager | https://github.com/nvm-sh/nvm 
+- Node Package Manager | https://www.npmjs.com/ 
+- Introducción a Markdown | https://guides.github.com/features/mastering-markdown/ 
+- Sintaxis Markdown | https://markdown.es/sintaxis-markdown/ 
 
