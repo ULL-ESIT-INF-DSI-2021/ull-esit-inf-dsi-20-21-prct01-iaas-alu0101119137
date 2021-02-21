@@ -115,7 +115,7 @@ Con lo anterior conseguimos iniciar sesión a la máquina virtual de la siguient
 ```
 andrea@andrea-laptop:~$ ssh iaas-dsi35
 ```  
-**9. Generación de la clave pública-privada en la máquina virtual.**
+**9. Generación de la clave pública-privada en la máquina virtual.**  
 Ahora tenemos que generar la clave pública-privada como hicimos en el paso anterior 6, pero en este caso lo hacemos en la máquina virtual.  
 ```
 usuario@iaas-dsi35:~$ cat .ssh/id_rsa.pub
