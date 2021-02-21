@@ -29,7 +29,7 @@ usuario@ubuntu:~$ sudo vim /etc/hostname
 usuario@ubuntu:~$ cat /etc/hostname
 iaas-dsi35
 ```  
-Además de modificar el fichero /etc/hostname tenemos que modificar también el fichero */etc/hosts*, en el que cambiaremos también el nombre del host al establecido anteriormente (iaas-dsi35):  
+Además de modificar el fichero */etc/hostname* tenemos que modificar también el fichero */etc/hosts*, en el que cambiaremos también el nombre del host al establecido anteriormente (iaas-dsi35):  
 ```
 usuario@ubuntu:~$ cat /etc/hosts
 127.0.0.1	localhost
@@ -81,7 +81,7 @@ andrea@andrea-laptop:~$ cat .ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFkn0P3gkkmuwS4T4yGoeScoNWEv9hSH0tRszmWSEfxKszhkgRFAtM91RAMI1AigvOb8IRbcq7jXWDONlJs+Bvuq8Q9btGpHFyG3H2Y2dXeZ+Bvker6KvfHuRqJLlde57YYghcs2juj23oFQ3RU++B7IF31DvazDvvLHcG9oVf9ajdTxqM69WYhy8GaaIBVy4ywL84sCV2iWEIgP2qqN2p2Uxg4GXZo5ODO4uKJCG11551MHwA81RTluiX+W+wEPG5mDx3dkbD5rWjWYiAAWIqybFB0iondnAcuH1pOpD3S9qiAe3CbibpzcWwVEqw0CWntFfBrJ6CB4WLLqG9DBSQsCRKfNEUAHZujrpZGlbrevNwvZ/vsD2jGIkQpEUXqJn4crViuj7MotYUpcQ3eltPhpsSTco6H80t2O2iudoefDl0VmIVb9sGjsd0YjyRxrX3xyieypNgPPu29n5pIyFRRNWOVD1ycr0T+9ZlMCzWWnfy8x/CxLzeeEVUchAve9c= andrea@andrea-laptop
 ```
 Como podemos comprobar con lo anterior, observamos que ya había generado previamente mi clave pública-privada.  
-En caso de no tenerla generada, lo anterior indica que el fichero no existe, por lo que tenemos que crearla. Por lo general, se toman los valores por defecto del script, para ello pulsamos *enter* cada vez que nos pida introducir algún dato. Es importante no introducir ningún *passphrase*. La clave se crea con lo siguiente:
+En caso de no tenerla generada, lo anterior indicaría que el fichero no existe, por lo que tendríamos que crearla. Por lo general, se toman los valores por defecto del script, para ello pulsamos *enter* cada vez que nos pida introducir algún dato. Es importante no introducir ningún *passphrase*. La clave se crea con el comando siguiente:
 ```
 andrea@andrea-laptop:~$ ssh-keygen
 ```  
@@ -144,7 +144,7 @@ user.name=Andrea Hernandez
 user.email=alu0101119137@ull.edu.es
 ```  
 **2. Configuración del prompt de la terminal de la máquina virtual**  
-Configuraremos el prompt de la terminal para que aparezca la rama actual en la que nos encontramos cuando accedemos a algún directorio que resulta estar asociado a un repositorio git. Para ello, descargamos el script [git prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) o copiamos su contenido en un fichero que crearemos en nuestra máquina virtual llamado *git-prompt.sh*. Los pasos a realizar son descargarnos el script y,a continuación, modificar el fichero *~/.bashrc*, incluyendo al final del mismo las dos líneas que aparecen en el código siguiente. El último comando nos permite reiniciar la terminal. 
+Configuraremos el prompt de la terminal para que aparezca la rama actual en la que nos encontramos cuando accedemos a algún directorio que resulta estar asociado a un repositorio git. Para ello, descargamos el script [git prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) o copiamos su contenido en un fichero que crearemos en nuestra máquina virtual llamado *git-prompt.sh*. Los pasos a realizar son descargarnos el script y, a continuación, modificar el fichero *~/.bashrc*, incluyendo al final del mismo las dos líneas que aparecen en el código siguiente. El último comando nos permite reiniciar la terminal. 
 ```
 usuario@iaas-dsi35:~$ mv git-prompt.sh .git-prompt.sh
 usuario@iaas-dsi35:~$ vim .bashrc
